@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .news-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .news-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Live News Feed</h1>
+        <div id="news-container"></div>
+    </div>
+
+    <!-- Need to run this HTML page in localhost
+    $ python3 -m http.server
+    http://localhost:8000/newsorg.html
+    -->
+    <script>
+        const apiKey = 'xxxxxxxxxxxxxxxxx'; // Replace with your NewsAPI key
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+        // const apiUrl = `https://newsapi.org/v2/everything?q=tesla&from=2024-07-22&sortBy=publishedAt&apiKey=${apiKey}`;        
+        const newsContainer = document.getElementById('news-container');
+
+        async function fetchNews() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Check if data.articles is an array
+                if (Array.isArray(data.articles)) {
+                    newsContainer.innerHTML = '';      // Clear existing news
+                    data.articles.forEach(article => {
+                        const newsItem = document.createElement('div');
+                        newsItem.className = 'news-item';
+                        newsItem.innerHTML = `
+                            <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                            <p>${article.description || 'No description available.'}</p>
+                        `;
+                        newsContainer.appendChild(newsItem);
+                    });
+                } else {
+                    newsContainer.innerHTML = '<p>No articles available.</p>';
+                }
+            } catch (error) {
+                newsContainer.innerHTML = '<p>Error fetching news. Please try again later.</p>';
+                console.error('Error fetching news:', error);
+            }
+        }
+        // Fetch news initially and then every 5 seconds
+        fetchNews();
+        // setInterval(fetchNews, 5000);
+    </script>
+</body>
+</html>
