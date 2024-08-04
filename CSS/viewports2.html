@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport Units Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80vw; /* 80% of the viewport width */
+            height: 50vh; /* 50% of the viewport height */
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: darkblue;
+            text-align: center;
+        }
+
+        .box {
+            width: 30vmin; /* 30% of the smaller dimension of the viewport */
+            height: 30vmin; /* 30% of the smaller dimension of the viewport */
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner {
+            font-size: 5vmax; /* 5% of the larger dimension of the viewport */
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90vw; /* 90% of the viewport width on small screens */
+                height: 60vh; /* 60% of the viewport height on small screens */
+            }
+
+            .box {
+                width: 40vmin; /* 40% of the smaller dimension on small screens */
+                height: 40vmin; /* 40% of the smaller dimension on small screens */
+            }
+
+            .banner {
+                font-size: 4vmax; /* 4% of the larger dimension on small screens */
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .container {
+                width: 70vw; /* 70% of the viewport width on large screens */
+                height: 40vh; /* 40% of the viewport height on large screens */
+            }
+
+            .box {
+                width: 25vmin; /* 25% of the smaller dimension on large screens */
+                height: 25vmin; /* 25% of the smaller dimension on large screens */
+            }
+
+            .banner {
+                font-size: 6vmax; /* 6% of the larger dimension on large screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">Responsive Banner</div>
+    <div class="container">
+        <div class="box">Box</div>
+    </div>
+</body>
+</html>

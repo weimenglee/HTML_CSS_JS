@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #info {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Browser Information</h1>
+    <div id="info">
+        <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+        <p><strong>Platform:</strong> <span id="platform"></span></p>
+        <p><strong>Language:</strong> <span id="language"></span></p>
+        <p><strong>Online:</strong> <span id="online"></span></p>
+        <p><strong>Cookies Enabled:</strong> <span id="cookiesEnabled"></span></p>
+    </div>
+
+    <script>
+        function displayBrowserInfo() {
+            const userAgent = navigator.userAgent;
+            const platform = navigator.platform;
+            const language = navigator.language || navigator.userLanguage;
+            const online = navigator.onLine ? 'Yes' : 'No';
+            const cookiesEnabled = navigator.cookieEnabled ? 'Yes' : 'No';
+
+            document.getElementById('userAgent').textContent = userAgent;
+            document.getElementById('platform').textContent = platform;
+            document.getElementById('language').textContent = language;
+            document.getElementById('online').textContent = online;
+            document.getElementById('cookiesEnabled').textContent = cookiesEnabled;
+        }
+
+        displayBrowserInfo();
+    </script>
+</body>
+</html>

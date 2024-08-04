@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Structures</title>
+</head>
+<body>
+    <h1>JavaScript Data Structures</h1>
+
+    <h2>Array</h2>
+    <p id="array-demo"></p>
+
+    <h2>Object</h2>
+    <p id="object-demo"></p>
+
+    <h2>Set</h2>
+    <p id="set-demo"></p>
+
+    <h2>Map</h2>
+    <p id="map-demo"></p>
+
+    <h2>Queue</h2>
+    <p id="queue-demo"></p>
+
+    <h2>Stack</h2>
+    <p id="stack-demo"></p>
+
+    <script>
+        // Array
+        let fruits = ['Apple', 'Banana', 'Cherry'];
+        fruits.push('Date');
+        let arrayOutput = 'Array: ' + fruits.join(', ');
+        
+        // Object
+        let person = {
+            name: 'Alice',
+            age: 30,
+            city: 'New York'
+        };
+        person.age = 31;
+        person.email = 'alice@example.com';
+        let objectOutput = `Object: Name: ${person.name}, Age: ${person.age}, City: ${person.city}, Email: ${person.email}`;
+        
+        // Set
+        let uniqueNumbers = new Set([1, 2, 3, 4]);
+        uniqueNumbers.add(5);
+        uniqueNumbers.delete(2);
+        let setOutput = 'Set: ' + Array.from(uniqueNumbers).join(', ');
+        
+        // Map
+        let map = new Map();
+        map.set('name', 'Bob');
+        map.set('age', 25);
+        map.delete('age');
+        let mapOutput = 'Map: ' + Array.from(map.entries()).map(([key, value]) => `${key}: ${value}`).join(', ');
+        
+        // Queue
+        let queue = [];
+        queue.push('first');
+        queue.push('second');
+        queue.shift();
+        let queueOutput = 'Queue: ' + queue.join(', ');
+        
+        // Stack
+        let stack = [];
+        stack.push('bottom');
+        stack.push('top');
+        stack.pop();
+        let stackOutput = 'Stack: ' + stack.join(', ');
+
+        // Displaying outputs
+        document.getElementById('array-demo').textContent = arrayOutput;
+        document.getElementById('object-demo').textContent = objectOutput;
+        document.getElementById('set-demo').textContent = setOutput;
+        document.getElementById('map-demo').textContent = mapOutput;
+        document.getElementById('queue-demo').textContent = queueOutput;
+        document.getElementById('stack-demo').textContent = stackOutput;
+    </script>
+</body>
+</html>

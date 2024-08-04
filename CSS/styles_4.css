@@ -1,0 +1,39 @@
+/* Class selector for the container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Class selector for the header */
+.header {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Class selector for the text */
+.text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Class selector for the button */
+.btn {
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

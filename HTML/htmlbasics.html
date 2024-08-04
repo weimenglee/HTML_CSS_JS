@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Information Form</title>
+</head>
+<body>
+    <h1>Customer Information</h1>
+    <form action="/submit_customer_info" method="post">
+        <label for="salutation">Salutation:</label>
+        <select id="salutation" name="salutation">
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="ms">Ms.</option>
+            <option value="dr">Dr.</option>
+        </select>
+        <br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50"></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Instructions</h2>
+    <ul>
+        <li>Fill out the salutation dropdown.</li>
+        <li>Enter your full name in the name field.</li>
+        <li>Provide your complete address in the address field.</li>
+        <li>Click the Submit button to send your information.</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async/Await Simple Example</title>
+</head>
+<body>
+  <p id="message">Waiting for message...</p>
+
+  <!-- <button id="loadMessage">Load Message</button> -->
+
+  <script>
+    // Simulate an asynchronous task with a Promise
+    function getMessage() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve('Hello, this is an async message!');
+        }, 1000); // Simulate a 1-second delay
+      });
+    }
+
+    // Async function to handle the asynchronous task
+    async function displayMessage() {
+      const messageElement = document.getElementById('message');
+      try {
+        let message = await getMessage(); // Wait for the async task to complete
+        messageElement.textContent = message; // Update the message element with the result
+      } catch (error) {
+        messageElement.textContent = 'Error occurred: ' + error.message;
+      }
+    }
+
+    // Call the async function to start the process
+    displayMessage();
+
+    // Add event listener to the button to call the async function
+    // document.getElementById('loadMessage').addEventListener('click', () => {
+    //   displayMessage().then(() => {
+    //     console.log('Message displayed successfully.');
+    //   }).catch(error => {
+    //     console.error('An error occurred:', error);
+    //   });
+    // });
+
+
+  </script>
+</body>
+</html>

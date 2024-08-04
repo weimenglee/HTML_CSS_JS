@@ -1,0 +1,40 @@
+/* ID selector for the main container */
+#main-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* ID selector for the main header */
+#main-header {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* ID selector for the main text */
+#main-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ID selector for the main button */
+#main-button {
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#main-button:hover {
+    background-color: #0056b3;
+}

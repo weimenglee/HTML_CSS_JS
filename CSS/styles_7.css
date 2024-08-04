@@ -1,0 +1,55 @@
+/* Style for the title with before and after pseudo-elements */
+.title {
+    position: relative;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* ::before pseudo-element for the title */
+.title::before {
+    content: "★";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: rgb(255, 0, 0);
+}
+
+/* ::after pseudo-element for the title */
+.title::after {
+    content: "★";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: rgb(255, 0, 0);
+}
+
+/* Style for the paragraph with before and after pseudo-elements */
+.paragraph {
+    position: relative;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* ::before pseudo-element for the paragraph */
+.paragraph::before {
+    content: "Note: ";
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* ::after pseudo-element for the paragraph */
+.paragraph::after {
+    content: " (End of note)";
+    font-weight: bold;
+    color: #007BFF;
+}

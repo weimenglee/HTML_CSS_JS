@@ -1,0 +1,31 @@
+/* Pseudo-class for the first child of a list */
+li:first-child {
+    color: blue;
+}
+
+/* Pseudo-class for the last child of a list */
+li:last-child {
+    color: green;
+}
+
+/* Pseudo-class for every even child of a list */
+li:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Pseudo-class for every odd child of a list */
+li:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+/* Pseudo-class for link when hovered */
+.link:hover {
+    color: red;
+}
+
+/* Pseudo-class for input field when focused */
+.input-field:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

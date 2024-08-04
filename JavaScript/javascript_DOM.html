@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation with JavaScript</title>
+    <style>
+        #container {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* .highlightedText {
+            color: red;
+        } */
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation Example</h1>
+    <div id="container">
+        <h2 id="header">Original Header</h2>
+        <p id="paragraph">This is a paragraph.</p>
+        <button id="changeContentButton">Change Content</button>
+        <button id="toggleHighlightButton">Toggle Highlight</button>
+
+
+        <!-- <button id="changeTextColorButton">Check Text Color</button> -->
+    </div>
+
+    <script>
+        // Function to change content
+        function changeContent() {
+            const header = document.getElementById('header');
+            const paragraph = document.getElementById('paragraph');
+
+            header.textContent = 'Header has been changed!';
+            paragraph.innerHTML = '<strong>This paragraph content has been updated.</strong>';
+        }
+
+        // Function to toggle highlight
+        function toggleHighlight() {
+            const container = document.getElementById('container');
+            container.classList.toggle('highlight');  // add if present; else removes it
+        }
+
+
+        // // Function to toggle highlight
+        // function changeTextColor() {
+        //     const container = document.getElementById('paragraph');
+        //     container.classList.add('highlightedText'); // add a class to an element
+        // }
+
+        // Add event listeners to buttons
+        document.getElementById('changeContentButton').addEventListener('click', changeContent);
+        document.getElementById('toggleHighlightButton').addEventListener('click', toggleHighlight);
+
+
+        // document.getElementById('changeTextColorButton').addEventListener('click', changeTextColor);
+    </script>
+</body>
+</html>
+
+
+<!-- 
+Challenge
+ 
+1. Add a button to change text color to red
+
+-->

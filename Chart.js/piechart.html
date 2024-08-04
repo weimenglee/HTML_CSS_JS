@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Example</title>
+    <style>
+        /* Optional: Center the canvas and give it some styling */
+        #chart-container {
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pie Chart Example</h1>
+    <div id="chart-container">
+        <canvas id="myPieChart"></canvas>
+    </div>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Get the canvas element
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+
+        // Create a new pie chart
+        const myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'My Pie Chart',
+                    data: [12, 19, 3, 5, 2, 3], // Data values
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)', // Red
+                        'rgba(54, 162, 235, 0.2)', // Blue
+                        'rgba(255, 206, 86, 0.2)', // Yellow
+                        'rgba(75, 192, 192, 0.2)', // Green
+                        'rgba(153, 102, 255, 0.2)', // Purple
+                        'rgba(255, 159, 64, 0.2)'  // Orange
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)', // Red
+                        'rgba(54, 162, 235, 1)', // Blue
+                        'rgba(255, 206, 86, 1)', // Yellow
+                        'rgba(75, 192, 192, 1)', // Green
+                        'rgba(153, 102, 255, 1)', // Purple
+                        'rgba(255, 159, 64, 1)'  // Orange
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

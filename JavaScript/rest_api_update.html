@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update and Delete Data Example</title>
+    <style>
+        #form-container {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update and Delete Data Example</h1>
+
+    <div id="form-container">
+        <!-- Form to update a post -->
+        <h2>Update Post</h2>
+        <input type="number" id="update-id" placeholder="Post ID" />
+        <input type="text" id="update-title" placeholder="New Title" />
+        <textarea id="update-body" placeholder="New Body"></textarea>
+        <button id="update-button">Update Post</button>
+
+        <!-- Form to delete a post -->
+        <h2>Delete Post</h2>
+        <input type="number" id="delete-id" placeholder="Post ID" />
+        <button id="delete-button">Delete Post</button>
+    </div>
+
+    <div id="response-container">
+        <!-- Response will be displayed here -->
+    </div>
+
+    <!-- Include JavaScript file -->
+    <script src="fetchRESTAPI-update.js"></script>
+</body>
+</html>

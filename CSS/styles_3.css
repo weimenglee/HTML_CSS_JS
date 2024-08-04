@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #444;
+    margin-left: 20px;
+}
+
+p {
+    margin-left: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;    
+}
+
+/* Navigation Styles */
+nav ul {
+    background: #63645d;
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-left: 20px solid #ccc;
+    border-right: 20px solid #ccc;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="url"],
+form input[type="number"],
+form input[type="range"],
+form input[type="date"],
+form input[type="month"],
+form input[type="week"],
+form input[type="time"],
+form input[type="datetime-local"],
+form input[type="color"],
+form input[type="file"],
+form textarea {
+    width: calc(100% - 1px); /* Adjust width for padding */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background: #555;
+}
+
+/* Unordered List Styles */
+ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #7c1515;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
